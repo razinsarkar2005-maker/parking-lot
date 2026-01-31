@@ -9,13 +9,13 @@ class Vehicle(ABC):
         pass
 class Car(Vehicle):
     def get_rate(self):
-        return 5
+        return 7
 class Bike(Vehicle):
     def get_rate(self):
         return 3
 class Truck(Vehicle):
     def get_rate(self):
-        return 8
+        return 10
 #  PRICING STRATEGY
 class PricingStrategy(ABC):
     @abstractmethod
