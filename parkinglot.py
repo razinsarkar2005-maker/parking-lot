@@ -55,7 +55,7 @@ class ParkingLot:
         self.pricing_strategy = pricing_strategy
     def park_vehicle(self, vehicle):
         if self.available_spaces <= 0:
-            print("❌ Parking Full!")
+            print(" Parking Full!")
             return
         if vehicle.plate_number in self.active_tickets:
             print("⚠ Vehicle already inside!")
@@ -63,11 +63,11 @@ class ParkingLot:
         ticket = ParkingTicket(vehicle)
         self.active_tickets[vehicle.plate_number] = ticket
         self.available_spaces -= 1
-        print(f"✅ Vehicle {vehicle.plate_number} parked. Spaces left: {self.available_spaces}")
+        print(f" Vehicle {vehicle.plate_number} parked. Spaces left: {self.available_spaces}")
 
     def exit_vehicle(self, plate_number):
         if plate_number not in self.active_tickets:
-            print("❌ Vehicle not found!")
+            print(" Vehicle not found!")
             return
         ticket = self.active_tickets.pop(plate_number)
         ticket.close_ticket(self.pricing_strategy)
