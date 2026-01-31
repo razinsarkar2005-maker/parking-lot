@@ -42,8 +42,7 @@ class ParkingTicket:
     def close_ticket(self, pricing_strategy):
         self.exit_time = datetime.now()
         time_diff = self.exit_time - self.entry_time
-        self.duration = max(1, round(time_diff.total_seconds() / 363
-        00))
+        self.duration = max(1, round(time_diff.total_seconds() / 3600))
         rate = self.vehicle.get_rate()
         self.fee = pricing_strategy.calculate_fee(self.duration, rate)
 # PARKING LOT 
